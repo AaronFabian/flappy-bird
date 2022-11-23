@@ -21,7 +21,7 @@ export const PIPE_HEIGHT = 288;
 export const PIPE_WIDHT = 70;
 
 import PipePair from './PipePair';
-import audio from './audio';
+// import audio from './audio';
 
 const BACKGROUND_SCROLL_SPEED = 0.9;
 const GROUND_SCROLL_SPEED = 1.8;
