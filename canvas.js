@@ -196,4 +196,10 @@ btnStart.addEventListener('click', () => {
    engine = true;
    containerUI.innerHTML = '';
 });
+
+window.addEventListener('click', () => {
+   if (!engine) return;
+   audio.jump.play();
+   bird.velocity.y = -3.8;
+});
 audio.backgroundMusic.play();

@@ -710,6 +710,11 @@ btnStart.addEventListener("click", ()=>{
     engine = true;
     containerUI.innerHTML = "";
 });
+window.addEventListener("click", ()=>{
+    if (!engine) return;
+    audio.jump.play();
+    bird.velocity.y = -3.8;
+});
 audio.backgroundMusic.play();
 
 },{"./utils":"bIDtH","./background.png":"iYI08","./Background":"1KKMm","./ground.png":"kIzJb","./Ground.js":"6OAYq","./bird.png":"bZFdM","./Bird":"aPQZR","./pipe.png":"iDknE","./Pipe":"4dkLc","./PipePair":"fQaGZ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./GameState":"5S8R9"}],"bIDtH":[function(require,module,exports) {

@@ -89,7 +89,7 @@
 
          #btn-start {
             cursor: pointer;
-            display: inline-block;
+            display: none;
             font-weight: 600;
             border-radius: 7%;
             width: 86px;
@@ -99,7 +99,7 @@
 
          #btn-jump {
             cursor: pointer;
-            display: inline-block;
+            display: none;
             font-weight: 600;
             border-radius: 7%;
             width: 86px;
@@ -113,6 +113,13 @@
 
          #btn-jump:active {
             background-color: yellow;
+         }
+
+         @media only screen and (max-width: 520px) {
+            #btn-start,
+            #btn-jump {
+               display: inline-block;
+            }
          }
       </style>
    </head>
