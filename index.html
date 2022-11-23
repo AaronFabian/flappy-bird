@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <script src="canvas.js" type="module" defer></script>
+      <title>Flappy Bird</title>
+      <style>
+         @font-face {
+            font-family: flappy;
+            src: url(./fonts/flappy.ttf);
+         }
+
+         @font-face {
+            font-family: font;
+            src: url(./fonts/font.ttf);
+         }
+
+         * {
+            margin: 0;
+         }
+
+         ::-webkit-scrollbar {
+            display: none;
+         }
+
+         body {
+            height: 100vh;
+            background-color: rgb(50, 47, 47);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            font-family: font;
+            color: #e1e5dc;
+         }
+
+         .text-h1 {
+            position: absolute;
+            top: 0;
+            left: 0;
+         }
+
+         .canvas-container {
+            position: relative;
+         }
+
+         .score-point {
+            position: absolute;
+            top: 6px;
+            left: 10;
+            font-size: 24px;
+         }
+
+         .score-point.live-score {
+            display: none;
+         }
+
+         .result-point {
+            margin-bottom: 16px;
+         }
+
+         .flappy-gui-states {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate3d(-50%, -50%, 0);
+            text-align: center;
+         }
+
+         .flappy-gui-states h2 {
+            font-family: flappy;
+            font-size: 32px;
+         }
+
+         .flappy-gui-states p {
+            text-align: center;
+            font-family: font;
+            font-size: 14px;
+         }
+
+         #btn-start {
+            cursor: pointer;
+            display: inline-block;
+            font-weight: 600;
+            border-radius: 7%;
+            width: 86px;
+            height: 56px;
+            background-color: #e1e5dc;
+         }
+
+         #btn-jump {
+            cursor: pointer;
+            display: inline-block;
+            font-weight: 600;
+            border-radius: 7%;
+            width: 86px;
+            height: 56px;
+            background-color: #e1e5dc;
+         }
+
+         #btn-start:active {
+            background-color: yellow;
+         }
+
+         #btn-jump:active {
+            background-color: yellow;
+         }
+      </style>
+   </head>
+   <body>
+      <div class="canvas-container">
+         <h1 class="score-point live-score">score : <span>0</span></h1>
+         <div class="flappy-gui-states"></div>
+         <canvas id="canvas"></canvas>
+      </div>
+      <div class="touchscreen-gamepad">
+         <button id="btn-start">Start</button>
+         <button id="btn-jump">Jump</button>
+      </div>
+   </body>
+</html>

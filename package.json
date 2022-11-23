@@ -1,0 +1,15 @@
+{
+  "name": "newtest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "canvas.js",
+  "scripts": {
+    "dev": "parcel index.html"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "howler": "^2.2.3",
+    "parcel": "^2.8.0"
+  }
+}
