@@ -1,27 +1,26 @@
-import { createImage, randomIntFromRange } from './utils';
+import { createImage, randomIntFromRange } from './helper/utils';
 
-import GameState from './GameState';
+import GameState from './classes/GameState';
 
-import backgroundImg from './background.png';
-import Background from './Background';
+import backgroundImg from './img/background.png';
+import Background from './classes/Background';
 let backgroundScroll = 0;
 
-import groundImg from './ground.png';
-import Ground from './Ground.js';
+import groundImg from './img/ground.png';
+import Ground from './classes/Ground.js';
 let groundScroll = 0;
 
-import birdImg from './bird.png';
-import Bird from './Bird';
+import birdImg from './img/bird.png';
+import Bird from './classes/Bird';
 
-import pipeImg from './pipe.png';
-import Pipe from './Pipe';
+import pipeImg from './img/pipe.png';
+import Pipe from './classes/Pipe';
 export const GAP_HEIGHT = 90;
 export const PIPE_SPEED = 2;
 export const PIPE_HEIGHT = 288;
 export const PIPE_WIDHT = 70;
 
-import PipePair from './PipePair';
-// import audio from './audio';
+import PipePair from './classes/PipePair';
 
 const BACKGROUND_SCROLL_SPEED = 0.9;
 const GROUND_SCROLL_SPEED = 1.8;

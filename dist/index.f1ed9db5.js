@@ -545,26 +545,26 @@ parcelHelpers.export(exports, "liveScoreUI", ()=>liveScoreUI);
 parcelHelpers.export(exports, "VIRTUAL_WIDTH", ()=>VIRTUAL_WIDTH);
 parcelHelpers.export(exports, "VIRTUAL_HEIGHT", ()=>VIRTUAL_HEIGHT);
 parcelHelpers.export(exports, "engine", ()=>engine);
-var _utils = require("./utils");
-var _gameState = require("./GameState");
+var _utils = require("./helper/utils");
+var _gameState = require("./classes/GameState");
 var _gameStateDefault = parcelHelpers.interopDefault(_gameState);
-var _backgroundPng = require("./background.png");
+var _backgroundPng = require("./img/background.png");
 var _backgroundPngDefault = parcelHelpers.interopDefault(_backgroundPng);
-var _background = require("./Background");
+var _background = require("./classes/Background");
 var _backgroundDefault = parcelHelpers.interopDefault(_background);
-var _groundPng = require("./ground.png");
+var _groundPng = require("./img/ground.png");
 var _groundPngDefault = parcelHelpers.interopDefault(_groundPng);
-var _groundJs = require("./Ground.js");
+var _groundJs = require("./classes/Ground.js");
 var _groundJsDefault = parcelHelpers.interopDefault(_groundJs);
-var _birdPng = require("./bird.png");
+var _birdPng = require("./img/bird.png");
 var _birdPngDefault = parcelHelpers.interopDefault(_birdPng);
-var _bird = require("./Bird");
+var _bird = require("./classes/Bird");
 var _birdDefault = parcelHelpers.interopDefault(_bird);
-var _pipePng = require("./pipe.png");
+var _pipePng = require("./img/pipe.png");
 var _pipePngDefault = parcelHelpers.interopDefault(_pipePng);
-var _pipe = require("./Pipe");
+var _pipe = require("./classes/Pipe");
 var _pipeDefault = parcelHelpers.interopDefault(_pipe);
-var _pipePair = require("./PipePair");
+var _pipePair = require("./classes/PipePair");
 var _pipePairDefault = parcelHelpers.interopDefault(_pipePair);
 let backgroundScroll = 0;
 let groundScroll = 0;
@@ -572,7 +572,6 @@ const GAP_HEIGHT = 90;
 const PIPE_SPEED = 2;
 const PIPE_HEIGHT = 288;
 const PIPE_WIDHT = 70;
-// import audio from './audio';
 const BACKGROUND_SCROLL_SPEED = 0.9;
 const GROUND_SCROLL_SPEED = 1.8;
 const BACKGROUND_LOOPING_POINT = 413;
@@ -711,21 +710,7 @@ window.addEventListener("click", ()=>{
 });
 audio.backgroundMusic.play();
 
-},{"./utils":"bIDtH","./background.png":"iYI08","./Background":"1KKMm","./ground.png":"kIzJb","./Ground.js":"6OAYq","./bird.png":"bZFdM","./Bird":"aPQZR","./pipe.png":"iDknE","./Pipe":"4dkLc","./PipePair":"fQaGZ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./GameState":"5S8R9"}],"bIDtH":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "createImage", ()=>createImage);
-parcelHelpers.export(exports, "randomIntFromRange", ()=>randomIntFromRange);
-const createImage = function(imageSrc) {
-    const image = new Image();
-    image.src = imageSrc;
-    return image;
-};
-const randomIntFromRange = function(min, max) {
-    return Math.floor(Math.random() * (max - min + 1) + min);
-};
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./helper/utils":"bqRS8","./classes/GameState":"gCNyi","./img/background.png":"cpZcu","./classes/Background":"fmYUy","./img/ground.png":"7YjnZ","./classes/Ground.js":"1wwdy","./img/bird.png":"65Y0M","./classes/Bird":"dkpDm","./img/pipe.png":"84uzw","./classes/Pipe":"laQ1x","./classes/PipePair":"kBxm5"}],"gkKU3":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -755,8 +740,42 @@ exports.export = function(dest, destName, get) {
     });
 };
 
-},{}],"iYI08":[function(require,module,exports) {
-module.exports = require("./helpers/bundle-url").getBundleURL("hWPS4") + "background.2e2df4be.png" + "?" + Date.now();
+},{}],"bqRS8":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "createImage", ()=>createImage);
+parcelHelpers.export(exports, "randomIntFromRange", ()=>randomIntFromRange);
+const createImage = function(imageSrc) {
+    const image = new Image();
+    image.src = imageSrc;
+    return image;
+};
+const randomIntFromRange = function(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+};
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gCNyi":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _canvas = require("../canvas");
+class GameState {
+    static startScreen() {
+        (0, _canvas.scoreUI).innerText = 0;
+        (0, _canvas.liveScoreUI).classList.remove("live-score");
+        return `<h2>Flappy Bird</h2>
+      <p>Press Start to play &#9654;</p>`;
+    }
+    static lostScreen(score) {
+        (0, _canvas.liveScoreUI).classList.add("live-score");
+        return `<h2>Oops! You Lost</h2>
+      <p class="result-point">score : <span>${score}</span></p>
+      <p>Press Start to coninue playing &#9654;</p>`;
+    }
+}
+exports.default = GameState;
+
+},{"../canvas":"15ljZ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"cpZcu":[function(require,module,exports) {
+module.exports = require("./helpers/bundle-url").getBundleURL("hWPS4") + "background.4fc95184.png" + "?" + Date.now();
 
 },{"./helpers/bundle-url":"lgJ39"}],"lgJ39":[function(require,module,exports) {
 "use strict";
@@ -792,10 +811,10 @@ exports.getBundleURL = getBundleURLCached;
 exports.getBaseURL = getBaseURL;
 exports.getOrigin = getOrigin;
 
-},{}],"1KKMm":[function(require,module,exports) {
+},{}],"fmYUy":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-var _canvas = require("./canvas");
+var _canvas = require("../canvas");
 var _genericObject = require("./GenericObject");
 var _genericObjectDefault = parcelHelpers.interopDefault(_genericObject);
 class Background extends (0, _genericObjectDefault.default) {
@@ -807,9 +826,6 @@ class Background extends (0, _genericObjectDefault.default) {
             x: position.x,
             y: position.y
         };
-    // this.width = image.width;
-    // this.height = image.height;
-    // this.image = image;
     }
     draw(x = this.position.x) {
         (0, _canvas.c).drawImage(this.image, x, this.position.y);
@@ -818,10 +834,10 @@ class Background extends (0, _genericObjectDefault.default) {
 }
 exports.default = Background;
 
-},{"./canvas":"15ljZ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./GenericObject":"bl9Nt"}],"bl9Nt":[function(require,module,exports) {
+},{"../canvas":"15ljZ","./GenericObject":"aXGLJ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"aXGLJ":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-var _canvas = require("./canvas");
+var _canvas = require("../canvas");
 class GenericObjects {
     constructor({ position  }, image){
         this.position = {
@@ -839,13 +855,13 @@ class GenericObjects {
 }
 exports.default = GenericObjects;
 
-},{"./canvas":"15ljZ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"kIzJb":[function(require,module,exports) {
-module.exports = require("./helpers/bundle-url").getBundleURL("hWPS4") + "ground.43565134.png" + "?" + Date.now();
+},{"../canvas":"15ljZ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"7YjnZ":[function(require,module,exports) {
+module.exports = require("./helpers/bundle-url").getBundleURL("hWPS4") + "ground.3892effc.png" + "?" + Date.now();
 
-},{"./helpers/bundle-url":"lgJ39"}],"6OAYq":[function(require,module,exports) {
+},{"./helpers/bundle-url":"lgJ39"}],"1wwdy":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-var _canvas = require("./canvas");
+var _canvas = require("../canvas");
 var _genericObject = require("./GenericObject");
 var _genericObjectDefault = parcelHelpers.interopDefault(_genericObject);
 class Ground extends (0, _genericObjectDefault.default) {
@@ -857,9 +873,6 @@ class Ground extends (0, _genericObjectDefault.default) {
             x: position.x,
             y: position.y
         };
-    // this.width = image.width;
-    // this.height = image.height;
-    // this.image = image;
     }
     draw(x = this.position.x) {
         (0, _canvas.c).drawImage(this.image, x, this.position.y);
@@ -868,13 +881,13 @@ class Ground extends (0, _genericObjectDefault.default) {
 }
 exports.default = Ground;
 
-},{"./canvas":"15ljZ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./GenericObject":"bl9Nt"}],"bZFdM":[function(require,module,exports) {
-module.exports = require("./helpers/bundle-url").getBundleURL("hWPS4") + "bird.4bda3845.png" + "?" + Date.now();
+},{"../canvas":"15ljZ","./GenericObject":"aXGLJ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"65Y0M":[function(require,module,exports) {
+module.exports = require("./helpers/bundle-url").getBundleURL("hWPS4") + "bird.05c39ae9.png" + "?" + Date.now();
 
-},{"./helpers/bundle-url":"lgJ39"}],"aPQZR":[function(require,module,exports) {
+},{"./helpers/bundle-url":"lgJ39"}],"dkpDm":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-var _canvas = require("./canvas");
+var _canvas = require("../canvas");
 var _genericObject = require("./GenericObject");
 var _genericObjectDefault = parcelHelpers.interopDefault(_genericObject);
 class Bird extends (0, _genericObjectDefault.default) {
@@ -909,15 +922,15 @@ class Bird extends (0, _genericObjectDefault.default) {
 }
 exports.default = Bird;
 
-},{"./canvas":"15ljZ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./GenericObject":"bl9Nt"}],"iDknE":[function(require,module,exports) {
-module.exports = require("./helpers/bundle-url").getBundleURL("hWPS4") + "pipe.54afd9d2.png" + "?" + Date.now();
+},{"../canvas":"15ljZ","./GenericObject":"aXGLJ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"84uzw":[function(require,module,exports) {
+module.exports = require("./helpers/bundle-url").getBundleURL("hWPS4") + "pipe.a504a7bf.png" + "?" + Date.now();
 
-},{"./helpers/bundle-url":"lgJ39"}],"4dkLc":[function(require,module,exports) {
+},{"./helpers/bundle-url":"lgJ39"}],"laQ1x":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-var _canvas = require("./canvas");
-var _utils = require("./utils");
-var _pipePng = require("./pipe.png");
+var _canvas = require("../canvas");
+var _utils = require("../helper/utils");
+var _pipePng = require("../img/pipe.png");
 var _pipePngDefault = parcelHelpers.interopDefault(_pipePng);
 var _genericObject = require("./GenericObject");
 var _genericObjectDefault = parcelHelpers.interopDefault(_genericObject);
@@ -949,11 +962,11 @@ class Pipe extends (0, _genericObjectDefault.default) {
 }
 exports.default = Pipe;
 
-},{"./canvas":"15ljZ","./utils":"bIDtH","./pipe.png":"iDknE","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./GenericObject":"bl9Nt"}],"fQaGZ":[function(require,module,exports) {
+},{"../canvas":"15ljZ","../helper/utils":"bqRS8","../img/pipe.png":"84uzw","./GenericObject":"aXGLJ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"kBxm5":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-var _canvas = require("./canvas");
-var _pipe = require("./Pipe");
+var _canvas = require("../canvas");
+var _pipe = require("../classes/Pipe");
 var _pipeDefault = parcelHelpers.interopDefault(_pipe);
 class PipePair {
     constructor({ position  }){
@@ -987,26 +1000,6 @@ class PipePair {
 }
 exports.default = PipePair;
 
-},{"./canvas":"15ljZ","./Pipe":"4dkLc","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"5S8R9":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _canvas = require("./canvas");
-class GameState {
-    static startScreen() {
-        (0, _canvas.scoreUI).innerText = 0;
-        (0, _canvas.liveScoreUI).classList.remove("live-score");
-        return `<h2>Flappy Bird</h2>
-      <p>Press Start to play &#9654;</p>`;
-    }
-    static lostScreen(score) {
-        (0, _canvas.liveScoreUI).classList.add("live-score");
-        return `<h2>Oops! You Lost</h2>
-      <p class="result-point">score : <span>${score}</span></p>
-      <p>Press Start to coninue playing &#9654;</p>`;
-    }
-}
-exports.default = GameState;
-
-},{"./canvas":"15ljZ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["hnX1p","15ljZ"], "15ljZ", "parcelRequire2382")
+},{"../canvas":"15ljZ","../classes/Pipe":"laQ1x","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["hnX1p","15ljZ"], "15ljZ", "parcelRequire2382")
 
 //# sourceMappingURL=index.f1ed9db5.js.map
