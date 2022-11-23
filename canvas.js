@@ -37,7 +37,6 @@ export const liveScoreUI = document.querySelector('.score-point');
 const resultScoreUI = document.querySelector('.result-point span');
 
 const btnStart = document.getElementById('btn-start');
-const btnJump = document.getElementById('btn-jump');
 
 export const VIRTUAL_WIDTH = 512;
 export const VIRTUAL_HEIGHT = 288;
@@ -183,12 +182,6 @@ window.addEventListener('keypress', ({ key }) => {
          console.log('game restarted');
          break;
    }
-});
-
-btnJump.addEventListener('click', () => {
-   if (!engine) return;
-   audio.jump.play();
-   bird.velocity.y = -3.8;
 });
 
 btnStart.addEventListener('click', () => {

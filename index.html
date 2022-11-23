@@ -56,7 +56,7 @@
          .score-point {
             position: absolute;
             top: 6px;
-            left: 10;
+            left: 10px;
             font-size: 24px;
          }
 
@@ -116,9 +116,34 @@
          }
 
          @media only screen and (max-width: 520px) {
-            #btn-start,
-            #btn-jump {
+            #btn-start {
                display: inline-block;
+            }
+
+            .score-point {
+               /* left: 140px; */
+            }
+
+            #canvas {
+               /* display: inline-block;
+               margin-right: 120px; */
+            }
+         }
+
+         @media only screen and (max-width: 480px) {
+            .score-point {
+               left: 30px;
+            }
+
+            #canvas {
+               /* display: inline-block;
+               margin-right: 120px; */
+            }
+         }
+
+         @media only screen and (max-width: 390px) {
+            .score-point {
+               left: 74px;
             }
          }
       </style>
@@ -131,7 +156,6 @@
       </div>
       <div class="touchscreen-gamepad">
          <button id="btn-start">Start</button>
-         <button id="btn-jump">Jump</button>
       </div>
    </body>
 </html>

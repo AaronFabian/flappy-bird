@@ -1,4 +1,4 @@
-4228
+4230
 73D:\Personal\Project\new_test\node_modules\css-select\lib\pseudo-selectors133135161725221683 1
 76D:\Personal\Project\new_test\node_modules\@parcel\optimizer-css\package.json133134835222097595 0
 68D:\Personal\Project\new_test\node_modules\node-addon-api\except.gypi133134835220376825 0
@@ -33,7 +33,7 @@
 74D:\Personal\Project\new_test\node_modules\node-gyp-build-optional-packages133135161761595765 1
 73D:\Personal\Project\new_test\node_modules\caniuse-lite\data\regions\AS.js133134835241130488 0
 90D:\Personal\Project\new_test\node_modules\@parcel\runtime-js\lib\helpers\get-worker-url.js133134835232116928 0
-38D:\Personal\Project\new_test\canvas.js133136757105592293 0
+38D:\Personal\Project\new_test\canvas.js133136843587219158 0
 75D:\Personal\Project\new_test\node_modules\@parcel\utils\test\config.test.js133134835230387652 0
 61D:\Personal\Project\new_test\node_modules\get-port\index.d.ts133134835217875782 0
 126D:\Personal\Project\new_test\node_modules\@parcel\node-resolver-core\test\fixture\node_modules\package-alias-glob\package.json133134835250866420 0
@@ -68,9 +68,9 @@
 80D:\Personal\Project\new_test\node_modules\lmdb\dependencies\lz4\lib\liblz4.pc.in133134835252972504 0
 37D:\Personal\Project\new_test\bird.png132438960960000000 0
 79D:\Personal\Project\new_test\node_modules\dom-serializer\lib\esm\index.d.ts.map133134835228587621 0
-36D:\Personal\Project\new_test\Bird.js133136639213962233 0
+36D:\Personal\Project\new_test\Bird.js133136841174418429 0
 76D:\Personal\Project\new_test\node_modules\htmlnano\lib\modules\minifyJson.js133134835234680510 0
-33D:\Personal\Project\new_test\dist133136762874339846 1
+33D:\Personal\Project\new_test\dist133136849397709077 1
 82D:\Personal\Project\new_test\node_modules\@parcel\reporter-cli\src\bundleReport.js133134835218375791 0
 71D:\Personal\Project\new_test\node_modules\@parcel\source-map\index.d.ts133134835250846312 0
 75D:\Personal\Project\new_test\node_modules\@parcel\packager-raw\package.json133134835222077655 0
@@ -97,7 +97,7 @@
 101D:\Personal\Project\new_test\node_modules\lmdb\dependencies\lz4\lib\dll\example\fullbench-dll.vcxproj133134835255255307 0
 62D:\Personal\Project\new_test\node_modules\msgpackr-extract\bin133135161760259008 1
 131D:\Personal\Project\new_test\node_modules\@parcel\node-resolver-core\test\fixture\node_modules\side-effects-false-glob\sub\index.js133134835245311278 0
-39D:\Personal\Project\new_test\index.html133136756125917573 0
+39D:\Personal\Project\new_test\index.html133136849186162300 0
 46D:\Personal\Project\new_test\package-lock.json133136614223194055 0
 116D:\Personal\Project\new_test\node_modules\@parcel\node-resolver-core\test\fixture\node_modules\package-alias\main.js133134835246081120 0
 63D:\Personal\Project\new_test\node_modules\node-gyp-build\bin.js133134835217715715 0
@@ -3374,7 +3374,7 @@
 78D:\Personal\Project\new_test\node_modules\@parcel\core\test\serializer.test.js133134835253654917 0
 95D:\Personal\Project\new_test\node_modules\@swc\helpers\src\_object_without_properties_loose.mjs133134835255051379 0
 67D:\Personal\Project\new_test\node_modules\@swc\helpers\src\_set.mjs133134835255240504 0
-55D:\Personal\Project\new_test\dist\index.f1ed9db5.js.map133136757106670839 0
+55D:\Personal\Project\new_test\dist\index.f1ed9db5.js.map133136843587369911 0
 89D:\Personal\Project\new_test\node_modules\@swc\helpers\src\_skip_first_generator_next.mjs133134835255303353 0
 85D:\Personal\Project\new_test\node_modules\@swc\helpers\src\_sliced_to_array_loose.mjs133134835255413000 0
 79D:\Personal\Project\new_test\node_modules\@swc\helpers\src\_super_prop_base.mjs133134835255443313 0
@@ -4216,10 +4216,12 @@
 55D:\Personal\Project\new_test\dist\index.c3546303.js.map133136761889037330 0
 51D:\Personal\Project\new_test\dist\index.c7dfc45b.js133136751328451730 0
 55D:\Personal\Project\new_test\dist\index.c7dfc45b.js.map133136751328553109 0
-51D:\Personal\Project\new_test\dist\index.f1ed9db5.js133136757106640830 0
+51D:\Personal\Project\new_test\dist\index.f1ed9db5.js133136843587354491 0
+51D:\Personal\Project\new_test\dist\index.f2f87f8f.js133136849397642586 0
+55D:\Personal\Project\new_test\dist\index.f2f87f8f.js.map133136849397709077 0
 51D:\Personal\Project\new_test\dist\index.f3a76ac5.js133136751328451730 0
 55D:\Personal\Project\new_test\dist\index.f3a76ac5.js.map133136751328543102 0
-44D:\Personal\Project\new_test\dist\index.html133136762874249104 0
+44D:\Personal\Project\new_test\dist\index.html133136849397642586 0
 51D:\Personal\Project\new_test\dist\pipe.7471d7f9.png133136698882097466 0
 48D:\Personal\Project\new_test\dist\audio\hurt.wav132438960960000000 0
 54D:\Personal\Project\new_test\dist\audio\marios_way.mp3132438960960000000 0

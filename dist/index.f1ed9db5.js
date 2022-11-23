@@ -583,7 +583,6 @@ const scoreUI = document.querySelector(".score-point span");
 const liveScoreUI = document.querySelector(".score-point");
 const resultScoreUI = document.querySelector(".result-point span");
 const btnStart = document.getElementById("btn-start");
-const btnJump = document.getElementById("btn-jump");
 const VIRTUAL_WIDTH = 512;
 const VIRTUAL_HEIGHT = 288;
 canvas.width = VIRTUAL_WIDTH;
@@ -699,11 +698,6 @@ window.addEventListener("keypress", ({ key  })=>{
             console.log("game restarted");
             break;
     }
-});
-btnJump.addEventListener("click", ()=>{
-    if (!engine) return;
-    audio.jump.play();
-    bird.velocity.y = -3.8;
 });
 btnStart.addEventListener("click", ()=>{
     init();
@@ -884,7 +878,7 @@ var _canvas = require("./canvas");
 var _genericObject = require("./GenericObject");
 var _genericObjectDefault = parcelHelpers.interopDefault(_genericObject);
 class Bird extends (0, _genericObjectDefault.default) {
-    #GRAVITY = 0.18;
+    #GRAVITY = 0.2;
     constructor({ position  }, image){
         super({
             position
@@ -907,8 +901,8 @@ class Bird extends (0, _genericObjectDefault.default) {
         this.position.y += this.velocity.y;
     }
     collides(pipe) {
-        if (this.position.x + 0 + (this.width - 0) >= pipe.position.x && this.position.x + 0 <= pipe.position.x + (0, _canvas.PIPE_WIDHT)) {
-            if (this.position.y + 0 + (this.height - 0) >= pipe.position.y && this.position.y + 0 <= pipe.position.y + (0, _canvas.PIPE_HEIGHT)) return true;
+        if (this.position.x + 2 + (this.width - 4) >= pipe.position.x && this.position.x + 2 <= pipe.position.x + (0, _canvas.PIPE_WIDHT)) {
+            if (this.position.y + 2 + (this.height - 4) >= pipe.position.y && this.position.y + 2 <= pipe.position.y + (0, _canvas.PIPE_HEIGHT)) return true;
         }
         return false;
     }

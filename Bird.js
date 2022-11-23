@@ -4,7 +4,7 @@ import { c } from './canvas';
 import GenericObjects from './GenericObject';
 
 export default class Bird extends GenericObjects {
-   #GRAVITY = 0.18;
+   #GRAVITY = 0.2;
 
    constructor({ position }, image) {
       super({ position }, image);
@@ -30,12 +30,12 @@ export default class Bird extends GenericObjects {
 
    collides(pipe) {
       if (
-         this.position.x + 0 + (this.width - 0) >= pipe.position.x &&
-         this.position.x + 0 <= pipe.position.x + PIPE_WIDHT
+         this.position.x + 2 + (this.width - 4) >= pipe.position.x &&
+         this.position.x + 2 <= pipe.position.x + PIPE_WIDHT
       ) {
          if (
-            this.position.y + 0 + (this.height - 0) >= pipe.position.y &&
-            this.position.y + 0 <= pipe.position.y + PIPE_HEIGHT
+            this.position.y + 2 + (this.height - 4) >= pipe.position.y &&
+            this.position.y + 2 <= pipe.position.y + PIPE_HEIGHT
          ) {
             return true;
          }
