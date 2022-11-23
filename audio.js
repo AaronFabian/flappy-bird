@@ -1,4 +1,8 @@
 import { Howl } from 'howler';
+// import marioWay from './audio/marios_way.mp3';
+// import jump from './audio/jump.wav';
+// import score from './audio/score.wav';
+// import hurt from './audio/hurt.wav';
 
 export default audio = {
    backgroundMusic: new Howl({

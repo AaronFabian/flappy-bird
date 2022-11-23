@@ -196,5 +196,4 @@ btnStart.addEventListener('click', () => {
    engine = true;
    containerUI.innerHTML = '';
 });
-
 audio.backgroundMusic.play();

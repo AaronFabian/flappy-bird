@@ -1009,10 +1009,14 @@ class GameState {
 }
 exports.default = GameState;
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./canvas":"15ljZ"}],"iqpdX":[function(require,module,exports) {
+},{"./canvas":"15ljZ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"iqpdX":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _howler = require("howler");
+// import marioWay from './audio/marios_way.mp3';
+// import jump from './audio/jump.wav';
+// import score from './audio/score.wav';
+// import hurt from './audio/hurt.wav';
 exports.default = audio = {
     backgroundMusic: new (0, _howler.Howl)({
         src: [
