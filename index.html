@@ -107,6 +107,10 @@
             background-color: #e1e5dc;
          }
 
+         .info-controller {
+            text-align: center;
+         }
+
          #btn-start:active {
             background-color: yellow;
          }
@@ -115,29 +119,29 @@
             background-color: yellow;
          }
 
+         .start-button {
+            scale: 0.6;
+         }
+
+         .info-detail {
+            display: flex;
+            align-items: center;
+            text-align: center;
+         }
+
          @media only screen and (max-width: 520px) {
             #btn-start {
                display: inline-block;
             }
 
-            .score-point {
-               /* left: 140px; */
-            }
-
-            #canvas {
-               /* display: inline-block;
-               margin-right: 120px; */
+            .info-controller {
+               display: none;
             }
          }
 
          @media only screen and (max-width: 480px) {
             .score-point {
-               left: 30px;
-            }
-
-            #canvas {
-               /* display: inline-block;
-               margin-right: 120px; */
+               left: 54px;
             }
          }
 
@@ -156,6 +160,20 @@
       </div>
       <div class="touchscreen-gamepad">
          <button id="btn-start">Start</button>
+      </div>
+
+      <div class="info-controller">
+         <p>
+            Desktop Controller
+            <span>🎮</span>
+            :
+         </p>
+         <div class="info-detail">
+            <img src="./start.png" alt="start button" class="start-button" />
+            <span>&nbsp; : &nbsp;Enter</span>
+            <span>&nbsp;&nbsp;--||--&nbsp;&nbsp;</span>
+            <span>&#x2191; Jump&nbsp; : &nbsp;Space key</span>
+         </div>
       </div>
    </body>
 </html>
